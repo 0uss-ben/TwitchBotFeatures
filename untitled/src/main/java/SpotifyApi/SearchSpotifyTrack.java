@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class SearchSpotifyTrack {
 
-    public static void SearchTrack(SpotifyApi spotifyApi, String trackName) {
+    public static Track SearchTrack(SpotifyApi spotifyApi, String trackName) {
         final SearchTracksRequest searchTracksRequest = spotifyApi.searchTracks(trackName)
                 .limit(10)
                 .build();
@@ -31,17 +31,16 @@ public class SearchSpotifyTrack {
                 System.out.println("Artists : ");
                 for(ArtistSimplified str : tr.getArtists())
                 {
-                    System.out.printf("%s%n",str.getName());
+                    System.out.printf("%s \t",str.getName());
                 }
                 System.out.println("----------------------------------");
-
             }
-
+            return tracks[0];
         } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e)
         {
             System.out.println("Error: " + e.getMessage());
         }
-
+        return null;
     }
 
 }
