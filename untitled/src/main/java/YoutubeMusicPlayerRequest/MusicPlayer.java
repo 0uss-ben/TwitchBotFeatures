@@ -1,7 +1,4 @@
-package MusicFinder;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+package YoutubeMusicPlayerRequest;
 
 import java.net.URI;
 import java.net.http.HttpClient;
