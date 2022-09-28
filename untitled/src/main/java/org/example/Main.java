@@ -15,7 +15,8 @@ public class Main {
             args [2] Track  Name
         */
         SpotifyClient spotifyClient = new SpotifyClient(args[0],args[1]);
-        SpotifyMusicPlayer.queueAdd(spotifyClient.getSpotifyApi(), Objects.requireNonNull(SearchSpotifyTrack.SearchTrack(spotifyClient.getSpotifyApi(), args[2])));
+        //SpotifyMusicPlayer.queueAdd(spotifyClient.getSpotifyApi(), Objects.requireNonNull(SearchSpotifyTrack.SearchTrack(spotifyClient.getSpotifyApi(), args[2])));
+        spotifyClient.getCurrentMusicInfo();
 
     }
 

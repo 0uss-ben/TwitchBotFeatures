@@ -28,17 +28,17 @@ public class SearchSpotifyTrack {
             for (Track tr : tracks)
             {
                 System.out.printf("Title : %s%n",tr.getName());
-                System.out.println("Artists : ");
+                System.out.print("Artists : ");
                 for(ArtistSimplified str : tr.getArtists())
                 {
-                    System.out.printf("%s \t",str.getName());
+                    System.out.printf("%s ",str.getName());
                 }
-                System.out.println("----------------------------------");
+                System.out.println("\n----------------------------------");
             }
             return tracks[0];
         } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e)
         {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getStackTrace());
         }
         return null;
     }
